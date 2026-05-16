@@ -1,0 +1,17 @@
+# Nixpacks build configuration for the orchestrator.
+#
+# Required because:
+#   * `rembg` pulls onnxruntime (CPU wheels work fine, no GPU).
+#   * `Pillow` needs libjpeg + zlib (auto-handled by Nixpacks).
+#   * `vtracer` is a pre-built Rust binary wheel — no system deps.
+#
+# Python is pinned to 3.12 to match `requires-python` in pyproject.toml.
+# The first run of `agency intake-loop` will trigger rembg's ONNX model
+# download (~150 MB cached to /root/.u2net by default). Subsequent restarts
+# reuse the cache while the container disk persists.
+
+[phases.setup]
+nixPkgs = ["python312", "gcc"]
+
+[phases.install]
+cmds = ["python -m pip install --upgrade pip && pip install -e ."]

@@ -1,0 +1,73 @@
+# --- Environment ---
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# --- Node / Next.js ---
+node_modules/
+.next/
+out/
+.turbo/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.pnpm-store/
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Supabase CLI ---
+supabase/.branches/
+supabase/.temp/
+supabase/.env
+
+# --- Generated assets (large, regeneratable) ---
+generated/
+output/
+deliverables_local/
+.cache/
+tmp/
+
+# --- Local model weights ---
+models/
+*.safetensors
+*.ckpt
+*.pth
+*.bin
+
+# --- Secrets ---
+*.key
+*.pem
+*.crt
+service-account*.json
+
+# --- n8n local data ---
+n8n/.n8n/
+n8n/data/

@@ -1,0 +1,32 @@
+# Files Railway should NOT upload to its build container.
+# Each Railway service points to a root dir (orchestrator/ or dashboard/),
+# so most exclusions live there — but these are repo-wide.
+
+.git/
+.github/
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+.next/
+out/
+
+# Local-only
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+
+# Other services' source — Railway service should only see its own folder
+# (set Root Directory in the Railway service settings)

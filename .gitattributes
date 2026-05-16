@@ -1,0 +1,31 @@
+# Normalize line endings to LF for cross-platform consistency.
+# Railway and Docker build images on Linux — CRLF line endings break shell
+# scripts and trip up Python's tokenize on edge cases.
+
+* text=auto eol=lf
+
+# Source code — always LF
+*.py    text eol=lf
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.js    text eol=lf
+*.jsx   text eol=lf
+*.sh    text eol=lf
+*.sql   text eol=lf
+*.json  text eol=lf
+*.toml  text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.md    text eol=lf
+*.css   text eol=lf
+
+# Binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.svg   text eol=lf
+*.ico   binary
+*.pdf   binary
+*.zip   binary
+*.gz    binary

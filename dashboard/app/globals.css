@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+/* Theme tokens — Tailwind v4 reads these from @theme. */
+@theme {
+  --color-bg: #0a0a0b;
+  --color-panel: #131418;
+  --color-border: #2a2c33;
+  --color-text: #e8e9ec;
+  --color-text-dim: #8b8e96;
+  --color-idle: #3a3d44;
+  --color-processing: #3b82f6;
+  --color-completed: #22c55e;
+  --color-error: #ef4444;
+  --color-warn: #f59e0b;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* Subtle pulse for processing agents. */
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgb(59 130 246 / 0.7); }
+  70% { box-shadow: 0 0 0 8px rgb(59 130 246 / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(59 130 246 / 0); }
+}
+.agent-processing {
+  animation: pulse-ring 1.6s ease-out infinite;
+}
+
+/* React Flow tweaks for dark UI. */
+.react-flow__renderer {
+  background: var(--color-bg);
+}
+.react-flow__background {
+  background: var(--color-bg);
+}
